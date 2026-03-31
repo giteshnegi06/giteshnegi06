@@ -1,21 +1,21 @@
 <!-- 🔥 Animated Header -->
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?size=28&duration=3000&color=00F7FF&center=true&vCenter=true&width=700&lines=Hi+👋,+I'm+Gitesh+Kumar;Full+Stack+Developer+(MERN);Building+Real-World+Web+Solutions;Turning+Ideas+Into+Reality+🚀" />
+  <img src="https://readme-typing-svg.herokuapp.com?size=30&duration=2500&color=0FF7FF&center=true&vCenter=true&width=800&lines=Hi+👋,+I'm+Gitesh+Kumar;Full+Stack+Developer+(MERN);Building+Scalable+Web+Solutions;Turning+Ideas+Into+Reality+🚀" />
 </p>
 
-<h3 align="center">💻 MERN Stack Developer | 🚀 Problem Solver | 🎯 Real-World Builder</h3>
+<h3 align="center">💻 MERN Stack Developer • 🚀 Problem Solver • 🎯 Real-World Builder</h3>
 
 ---
 
 ## 🧑‍💻 About Me  
 
-<img align="right" alt="coding" width="320" src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif">
+<img align="right" alt="coding" width="300" src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif">
 
 - 🔭 Building **NGO Platforms, Event Systems & Admin Dashboards**
 - 🌱 Learning **Advanced MERN, System Design & Scalable Architecture**
-- 💡 Focused on **real-world problem solving projects**
-- 🤝 Open to **Freelance, Collaborations & Startup Projects**
-- ⚡ Strong belief: *“Execution > Ideas”*
+- 💡 Focused on **real-world impactful projects**
+- 🤝 Open to **Freelance, Collaborations & Startup Work**
+- ⚡ Mindset: *Execution beats ideas every time*
 
 ---
 
@@ -40,22 +40,21 @@
 
 ---
 
-## 🧠 What I Build  
+## 🧠 Featured Work  
 
-🚀 **NGO Management System**  
-✔ Event Registration + Payments  
-✔ Blood Donor Database  
-✔ Admin Dashboard  
+💼 **NGO Management Platform**  
+→ Event Registration + Payments  
+→ Blood Donor System  
+→ Admin Dashboard  
 
-🚀 **Event Platforms**  
-✔ User Authentication  
-✔ Real-time data management  
-✔ Mobile responsive UI  
+⚡ **Event Management System**  
+→ Authentication + Real-time Data  
+→ Fully Responsive UI  
 
-🚀 **Modern Websites**  
-✔ Tailwind CSS UI  
-✔ Performance optimized  
-✔ SEO-friendly  
+🌐 **Modern Web Projects**  
+→ Tailwind UI  
+→ Performance Optimized  
+→ SEO Friendly  
 
 ---
 
@@ -71,7 +70,19 @@
 
 <p align="center">
   <a href="https://github.com/giteshnegi06">
-    <img src="https://skillicons.dev/icons?i=github" />
+    <img src="https://img.shields.io/badge/GitHub-000?style=for-the-badge&logo=github&logoColor=white"/>
+  </a>
+  
+  <a href="https://linkedin.com/in/gitesh-kumar-83772a359">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
+  </a>
+
+  <a href="https://instagram.com/YOUR-INSTAGRAM">
+    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/>
+  </a>
+
+  <a href="mailto:negigitesh@gmail.com">
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white"/>
   </a>
 </p>
 
@@ -79,12 +90,14 @@
 
 ## 💬 Developer Mindset  
 
-> “I don’t just build websites, I build solutions that create impact.”
+<p align="center">
+  <i>"I don't just build websites, I build solutions that create real impact."</i>
+</p>
 
 ---
 
 ## 👀 Profile Views  
 
-<p align="center">
+<p align="center"> 
   <img src="https://komarev.com/ghpvc/?username=giteshnegi06&label=Profile%20Views&color=0e75b6&style=for-the-badge" />
 </p>
