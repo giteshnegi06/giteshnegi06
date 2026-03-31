@@ -9,7 +9,7 @@
 
 ## 🧑‍💻 About Me  
 
-<img align="right" alt="coding" width="400" hight="50" src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif">
+<img align="right" alt="coding" width="300" src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif">
 
 - 🔭 Building **NGO Platforms, Event Systems & Admin Dashboards**
 - 🌱 Learning **Advanced MERN, System Design & Scalable Architecture**
