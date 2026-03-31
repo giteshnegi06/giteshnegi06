@@ -61,7 +61,7 @@
 ## 🐍 Contribution Snake  
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/giteshnegi06/giteshnegi06/output/snake.svg" alt="snake animation"/>
+  <img src="https://raw.githubusercontent.com/giteshnegi06/giteshnegi06/output/github-contribution-grid-snake-dark.svg" />
 </p>
 
 ---
