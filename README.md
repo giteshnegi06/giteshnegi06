@@ -1,6 +1,6 @@
 <!-- 🔥 Animated Header -->
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?size=30&duration=2500&color=0FF7FF&center=true&vCenter=true&width=800&lines=Hi+👋,+I'm+Gitesh+Kumar;Full+Stack+Developer+(MERN);Building+Scalable+Web+Solutions;Turning+Ideas+Into+Reality+🚀" />
+  <img src="https://readme-typing-svg.herokuapp.com?size=30&duration=2500&color=0FF7FF&center=true&vCenter=true&width=800&lines=Hi+👋,+I'm+Gitesh;Full+Stack+Developer+(MERN);Building+Scalable+Web+Solutions;Turning+Ideas+Into+Reality+🚀" />
 </p>
 
 <h3 align="center">💻 MERN Stack Developer • 🚀 Problem Solver • 🎯 Real-World Builder</h3>
