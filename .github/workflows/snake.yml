@@ -4,25 +4,28 @@ on:
   schedule:
     - cron: "0 0 * * *"
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - scripts/snake.js
+      - .github/workflows/snake.yml
 
 permissions:
   contents: write
-
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Generate snake
-        uses: Platane/snk@v3
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
         with:
-          github_user_name: giteshnegi06
-          outputs: |
-            dist/snake.svg?color_snake=7B61FF
-            dist/snake-dark.svg?palette=github-dark&color_snake=00F7FF
+          node-version: 20
+
+      - name: Generate growing snake
+        run: node scripts/snake.js giteshnegi06 dist
 
       - name: Push to output branch
         uses: peaceiris/actions-gh-pages@v4
