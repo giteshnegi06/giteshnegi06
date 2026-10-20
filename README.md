@@ -64,20 +64,15 @@ const gitesh = {
 
 ## 🚀 Featured Work
 
-> 11 live client & freelance projects built with React, Next.js, Tailwind CSS and Framer Motion.
+> A selection of live client & freelance projects built with React, Next.js, Tailwind CSS and Framer Motion.
 
 <p align="center">
-  <a href="https://www.angcinfra.com/"><img src="assets/cards/01.svg" width="410" alt="ANGC Infra" /></a>
-  <a href="https://gsiplgroup.com/"><img src="assets/cards/02.svg" width="410" alt="GSIPL Group" /></a>
-  <a href="https://www.brokrshouse.com/"><img src="assets/cards/03.svg" width="410" alt="Brokrs House" /></a>
-  <a href="https://desifasal.in/"><img src="assets/cards/04.svg" width="410" alt="Desi Fasal" /></a>
-  <a href="https://www.angcsynapse.com/"><img src="assets/cards/05.svg" width="410" alt="ANGC Synapse" /></a>
-  <a href="https://www.saffroom.com/"><img src="assets/cards/06.svg" width="410" alt="Saffroom" /></a>
-  <a href="https://thebrokrs.com/"><img src="assets/cards/07.svg" width="410" alt="The Brokrs" /></a>
-  <a href="https://ssj-three.vercel.app/"><img src="assets/cards/08.svg" width="410" alt="Shyam Jagat" /></a>
-  <a href="https://clickcard-2.vercel.app/"><img src="assets/cards/09.svg" width="410" alt="Click Card" /></a>
-  <a href="https://qr-ordering-sable.vercel.app/cafe-login"><img src="assets/cards/10.svg" width="410" alt="Cafe Website" /></a>
-  <a href="https://www.sahilhairexpert.com/"><img src="assets/cards/11.svg" width="410" alt="Barber Website" /></a>
+  <a href="https://clickcard-2.vercel.app/"><img src="assets/cards/01.svg" width="410" alt="Click Card" /></a>
+  <a href="https://ssj-three.vercel.app/"><img src="assets/cards/02.svg" width="410" alt="Shyam Jagat" /></a>
+  <a href="https://www.angcinfra.com/"><img src="assets/cards/03.svg" width="410" alt="ANGC Infra" /></a>
+  <a href="https://gsiplgroup.com/"><img src="assets/cards/04.svg" width="410" alt="GSIPL Group" /></a>
+  <a href="https://qr-ordering-sable.vercel.app/cafe-login"><img src="assets/cards/05.svg" width="410" alt="Cafe Website" /></a>
+  <a href="https://www.sahilhairexpert.com/"><img src="assets/cards/06.svg" width="410" alt="Barber Website" /></a>
 </p>
 
 ---

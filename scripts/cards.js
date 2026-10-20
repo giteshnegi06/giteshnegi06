@@ -1,6 +1,6 @@
 // Generates animated SVG project cards into assets/cards/.  Usage: node scripts/cards.js
 const fs = require("fs");
-const projects = [
+const all = [
   ["ANGC Infra", "Plot sales, broker network & CRM", ["React", "Vite", "Tailwind", "Framer Motion"], "#00f7ff", "#7b61ff"],
   ["GSIPL Group", "Real estate sales & CRM dashboard", ["React", "CRM", "REST API"], "#ff9f43", "#ff3cac"],
   ["Brokrs House", "Property discovery web & app", ["React", "Tailwind", "Admin Panel"], "#39d353", "#00f7ff"],
@@ -13,7 +13,10 @@ const projects = [
   ["Cafe Website", "Menu + QR ordering system", ["React", "Vite", "QR Ordering"], "#ffb347", "#ff5e7e"],
   ["Barber Website", "Service discovery & booking flow", ["React", "Framer Motion"], "#4cc9f0", "#7b61ff"],
 ];
+// shown cards, in order (1-based indexes into the list above)
+const projects = [9, 8, 1, 2, 10, 11].map((n) => all[n - 1]);
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
+fs.rmSync("assets/cards", { recursive: true, force: true });
 fs.mkdirSync("assets/cards", { recursive: true });
 projects.forEach(([title, kind, tags, c1, c2], i) => {
   const n = String(i + 1).padStart(2, "0");
