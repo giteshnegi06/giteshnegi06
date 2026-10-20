@@ -66,14 +66,18 @@ const gitesh = {
 
 > A few of my live client & freelance projects, built with React, Next.js, Tailwind CSS and Framer Motion.
 
-<p align="center">
-  <a href="https://clickcard-2.vercel.app/"><img src="assets/cards/click-card.svg" width="270" alt="Click Card" /></a>
-  <a href="https://ssj-three.vercel.app/"><img src="assets/cards/shyam-jagat.svg" width="270" alt="Shyam Jagat" /></a>
-  <a href="https://www.angcinfra.com/"><img src="assets/cards/angc-infra.svg" width="270" alt="ANGC Infra" /></a>
-  <a href="https://gsiplgroup.com/"><img src="assets/cards/gsipl-group.svg" width="270" alt="GSIPL Group" /></a>
-  <a href="https://qr-ordering-sable.vercel.app/cafe-login"><img src="assets/cards/cafe-website.svg" width="270" alt="Cafe Website" /></a>
-  <a href="https://www.sahilhairexpert.com/"><img src="assets/cards/barber-website.svg" width="270" alt="Barber Website" /></a>
-</p>
+<table align="center">
+  <tr>
+    <td><a href="https://clickcard-2.vercel.app/"><img src="assets/cards/click-card-v2.svg" width="270" alt="Click Card" /></a></td>
+    <td><a href="https://ssj-three.vercel.app/"><img src="assets/cards/shyam-jagat-v2.svg" width="270" alt="Shyam Jagat" /></a></td>
+    <td><a href="https://www.angcinfra.com/"><img src="assets/cards/angc-infra-v2.svg" width="270" alt="ANGC Infra" /></a></td>
+  </tr>
+  <tr>
+    <td><a href="https://gsiplgroup.com/"><img src="assets/cards/gsipl-group-v2.svg" width="270" alt="GSIPL Group" /></a></td>
+    <td><a href="https://qr-ordering-sable.vercel.app/cafe-login"><img src="assets/cards/cafe-website-v2.svg" width="270" alt="Cafe Website" /></a></td>
+    <td><a href="https://www.sahilhairexpert.com/"><img src="assets/cards/barber-website-v2.svg" width="270" alt="Barber Website" /></a></td>
+  </tr>
+</table>
 
 ---
 

@@ -11,7 +11,7 @@ const projects = [
 fs.mkdirSync("assets/cards", { recursive: true });
 const esc = (t) => t.replace(/&/g, "&amp;").replace(/</g, "&lt;");
 projects.forEach(([title, kind, stack, c], i) => {
-  const n = title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+  const n = title.toLowerCase().replace(/[^a-z0-9]+/g, "-") + "-v2";
   fs.writeFileSync(
     `assets/cards/${n}.svg`,
     `<svg xmlns="http://www.w3.org/2000/svg" width="270" height="96" viewBox="0 0 270 96" font-family="'Segoe UI',Helvetica,Arial,sans-serif">
