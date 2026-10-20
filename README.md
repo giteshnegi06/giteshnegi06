@@ -45,7 +45,14 @@ const gitesh = {
 ## 📊 GitHub Stats
 
 <p align="center">
-  <img height="170" src="https://github-readme-stats.vercel.app/api?username=giteshnegi06&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117" />
+  <img src="https://img.shields.io/badge/Live%20Projects-11-0FF7FF?style=for-the-badge&logo=vercel&logoColor=black" />
+  <img src="https://img.shields.io/badge/Freelance%20Projects-5%2B-7B61FF?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Experience-1%2B%20Year-FF3CAC?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Contributions-754-39d353?style=for-the-badge&logo=github&logoColor=black" />
+</p>
+
+<p align="center">
+  <img height="170" src="https://github-readme-stats.vercel.app/api?username=giteshnegi06&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&hide_rank=true&count_private=true&include_all_commits=true&custom_title=Gitesh's%20Coding%20Activity" />
   <img height="170" src="https://streak-stats.demolab.com/?user=giteshnegi06&theme=tokyonight&hide_border=true&background=0d1117" />
 </p>
 
