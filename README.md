@@ -38,7 +38,7 @@ const gitesh = {
 
 <p align="center">
   <img src="https://skillicons.dev/icons?i=react,nextjs,vite,js,html,css,tailwind,git,github,vscode,figma,vercel&perline=12" />
-  <img height="48" src="https://img.shields.io/badge/Neon-00E599?style=for-the-badge&logo=neon&logoColor=black" />
+  <img height="48" src="assets/neon-tile.svg" alt="Neon" />
 </p>
 
 ---
