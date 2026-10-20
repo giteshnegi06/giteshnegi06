@@ -2,7 +2,7 @@
 <rect x="0.5" y="0.5" width="269" height="95" rx="10" fill="#0d1117" stroke="#30363d"/>
 <rect x="16" y="18" width="3" height="22" rx="1.5" fill="#4cc9f0"><animate attributeName="height" values="22;34;22" dur="3s" repeatCount="indefinite"/></rect>
 <text x="28" y="35" font-size="16" font-weight="600" fill="#f0f6fc">Barber Website</text>
-<text x="28" y="56" font-size="12" fill="#8b949e">Service discovery & booking</text>
+<text x="28" y="56" font-size="12" fill="#8b949e">Service discovery &amp; booking</text>
 <text x="28" y="78" font-size="11" fill="#4cc9f0">React · Framer Motion</text>
 <text x="254" y="78" text-anchor="end" font-size="13" fill="#8b949e">↗</text>
 </svg>

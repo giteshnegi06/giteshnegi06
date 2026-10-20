@@ -9,6 +9,7 @@ const projects = [
   ["Barber Website", "Service discovery & booking", "React · Framer Motion", "#4cc9f0", "https://www.sahilhairexpert.com/"],
 ];
 fs.mkdirSync("assets/cards", { recursive: true });
+const esc = (t) => t.replace(/&/g, "&amp;").replace(/</g, "&lt;");
 projects.forEach(([title, kind, stack, c], i) => {
   const n = title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
   fs.writeFileSync(
@@ -16,9 +17,9 @@ projects.forEach(([title, kind, stack, c], i) => {
     `<svg xmlns="http://www.w3.org/2000/svg" width="270" height="96" viewBox="0 0 270 96" font-family="'Segoe UI',Helvetica,Arial,sans-serif">
 <rect x="0.5" y="0.5" width="269" height="95" rx="10" fill="#0d1117" stroke="#30363d"/>
 <rect x="16" y="18" width="3" height="22" rx="1.5" fill="${c}"><animate attributeName="height" values="22;34;22" dur="3s" repeatCount="indefinite"/></rect>
-<text x="28" y="35" font-size="16" font-weight="600" fill="#f0f6fc">${title}</text>
-<text x="28" y="56" font-size="12" fill="#8b949e">${kind}</text>
-<text x="28" y="78" font-size="11" fill="${c}">${stack}</text>
+<text x="28" y="35" font-size="16" font-weight="600" fill="#f0f6fc">${esc(title)}</text>
+<text x="28" y="56" font-size="12" fill="#8b949e">${esc(kind)}</text>
+<text x="28" y="78" font-size="11" fill="${c}">${esc(stack)}</text>
 <text x="254" y="78" text-anchor="end" font-size="13" fill="#8b949e">↗</text>
 </svg>`,
   );
