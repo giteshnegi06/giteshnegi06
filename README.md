@@ -48,7 +48,6 @@ const gitesh = {
 
 <p align="center">
   <img height="150" src="https://github-readme-stats.vercel.app/api/top-langs/?username=giteshnegi06&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117" />
-  <img height="150" src="https://github-profile-trophy.vercel.app/?username=giteshnegi06&theme=tokyonight&no-frame=true&no-bg=true&row=1&column=3" />
 </p>
 
 ---
@@ -111,7 +110,7 @@ const gitesh = {
 </p>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=giteshnegi06&label=Profile%20Views&color=0e75b6&style=flat-square" />
+  <img src="https://hits.sh/github.com/giteshnegi06.svg?style=flat-square&label=Profile%20Views&color=0e75b6" />
 </p>
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:FF3CAC,50:7B61FF,100:0FF7FF&height=120&section=footer" alt="footer" />
