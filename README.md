@@ -64,15 +64,15 @@ const gitesh = {
 
 ## 🚀 Featured Work
 
-> A selection of live client & freelance projects built with React, Next.js, Tailwind CSS and Framer Motion.
+> A few of my live client & freelance projects, built with React, Next.js, Tailwind CSS and Framer Motion.
 
 <p align="center">
-  <a href="https://clickcard-2.vercel.app/"><img src="assets/cards/01.svg" width="410" alt="Click Card" /></a>
-  <a href="https://ssj-three.vercel.app/"><img src="assets/cards/02.svg" width="410" alt="Shyam Jagat" /></a>
-  <a href="https://www.angcinfra.com/"><img src="assets/cards/03.svg" width="410" alt="ANGC Infra" /></a>
-  <a href="https://gsiplgroup.com/"><img src="assets/cards/04.svg" width="410" alt="GSIPL Group" /></a>
-  <a href="https://qr-ordering-sable.vercel.app/cafe-login"><img src="assets/cards/05.svg" width="410" alt="Cafe Website" /></a>
-  <a href="https://www.sahilhairexpert.com/"><img src="assets/cards/06.svg" width="410" alt="Barber Website" /></a>
+  <a href="https://clickcard-2.vercel.app/"><img src="assets/cards/01.svg" width="270" alt="Click Card" /></a>
+  <a href="https://ssj-three.vercel.app/"><img src="assets/cards/02.svg" width="270" alt="Shyam Jagat" /></a>
+  <a href="https://www.angcinfra.com/"><img src="assets/cards/03.svg" width="270" alt="ANGC Infra" /></a>
+  <a href="https://gsiplgroup.com/"><img src="assets/cards/04.svg" width="270" alt="GSIPL Group" /></a>
+  <a href="https://qr-ordering-sable.vercel.app/cafe-login"><img src="assets/cards/05.svg" width="270" alt="Cafe Website" /></a>
+  <a href="https://www.sahilhairexpert.com/"><img src="assets/cards/06.svg" width="270" alt="Barber Website" /></a>
 </p>
 
 ---
