@@ -17,6 +17,7 @@ const GROW_PX = 5; // length gained per contribution square eaten
 const MAX_PX = 330; // maximum body length
 const HEAD_R = 6.4;
 const TAIL_R = 1.6;
+const RUN_CAP = 110; // max seconds of hunting per loop
 
 const themes = {
   light: {
@@ -61,6 +62,21 @@ async function getDays() {
 
 const f = (n) => +n.toFixed(3);
 
+function seedFromDate() {
+  const n = new Date();
+  return n.getUTCFullYear() * 400 + n.getUTCMonth() * 31 + n.getUTCDate();
+}
+
+function rng(a) {
+  return () => {
+    a |= 0;
+    a = (a + 0x6d2b79f5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
 function mix(a, b, k) {
   const p = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16));
   const A = p(a);
@@ -75,20 +91,84 @@ function build(days, t) {
   const cx = (x) => PAD + x * PITCH + CELL / 2;
   const cy = (y) => PAD + y * PITCH + CELL / 2;
 
-  // Horizontal sweep: row 0 left->right, U-turn, row 1 right->left, ...
-  // Each row is straight; rows are joined by a smooth half circle (no sharp turns).
-  const R = PITCH / 2;
-  const rowLen = (cols - 1) * PITCH;
-  const arcLen = Math.PI * R;
-  let d = `M${cx(0)},${cy(0)}`;
-  for (let y = 0; y < 7; y++) {
-    const right = y % 2 === 0;
-    d += ` L${cx(right ? cols - 1 : 0)},${cy(y)}`;
-    if (y < 6) d += ` A${R},${R} 0 0 ${right ? 1 : 0} ${cx(right ? cols - 1 : 0)},${cy(y + 1)}`;
+  // Random hunt: the snake picks one of the few nearest uneaten squares, walks there
+  // with grid steps (no U-turns), and eats everything it passes over.
+  const rnd = rng(seedFromDate());
+  const key = (x, y) => x + "," + y;
+  const cellAt = new Map(days.map((c) => [key(c.x, c.y), c]));
+  const food = new Set(days.filter((c) => c.level > 0).map((c) => key(c.x, c.y)));
+  const visited = new Map(); // key -> distance along path when first reached
+  const pts = [[0, 3]];
+  let px = 0;
+  let py = 3;
+  let prev = null;
+  let corners = 0;
+  let steps = 0;
+  const maxSteps = Math.floor((RUN_CAP * SPEED) / PITCH);
+  const visit = () => {
+    const k = key(px, py);
+    if (!visited.has(k)) visited.set(k, steps);
+    food.delete(k);
+  };
+  visit();
+  while (food.size && steps < maxSteps) {
+    const list = [...food]
+      .map((k) => k.split(",").map(Number))
+      .sort((p, q) => Math.abs(p[0] - px) + Math.abs(p[1] - py) - (Math.abs(q[0] - px) + Math.abs(q[1] - py)));
+    const [tx, ty] = list[Math.floor(rnd() * Math.min(4, list.length))];
+    while ((px !== tx || py !== ty) && steps < maxSteps) {
+      const opts = [];
+      if (tx > px) opts.push([1, 0]);
+      if (tx < px) opts.push([-1, 0]);
+      if (ty > py) opts.push([0, 1]);
+      if (ty < py) opts.push([0, -1]);
+      let ok = opts.filter((m) => !prev || !(m[0] === -prev[0] && m[1] === -prev[1]));
+      if (!ok.length) {
+        // would have to turn around: sidestep first
+        ok = [[0, 1], [0, -1], [1, 0], [-1, 0]].filter(
+          (m) =>
+            (!prev || !(m[0] === -prev[0] && m[1] === -prev[1])) &&
+            px + m[0] >= 0 && px + m[0] < cols && py + m[1] >= 0 && py + m[1] < 7 &&
+            (m[0] === 0) !== (prev ? prev[0] === 0 : false),
+        );
+      }
+      const straight = prev && ok.find((m) => m[0] === prev[0] && m[1] === prev[1]);
+      const m = straight && rnd() < 0.65 ? straight : ok[Math.floor(rnd() * ok.length)];
+      if (prev && (m[0] !== prev[0] || m[1] !== prev[1])) corners++;
+      px += m[0];
+      py += m[1];
+      prev = m;
+      steps++;
+      pts.push([px, py]);
+      visit();
+    }
   }
-  const total = 7 * rowLen + 6 * arcLen;
+  // keep only direction changes, then round every corner with a small curve
+  const keep = [pts[0]];
+  for (let i = 1; i < pts.length - 1; i++) {
+    const a1 = [pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]];
+    const b1 = [pts[i + 1][0] - pts[i][0], pts[i + 1][1] - pts[i][1]];
+    if (a1[0] !== b1[0] || a1[1] !== b1[1]) keep.push(pts[i]);
+  }
+  keep.push(pts[pts.length - 1]);
+  const RAD = PITCH / 2;
+  let d = `M${cx(keep[0][0])},${cy(keep[0][1])}`;
+  for (let i = 1; i < keep.length - 1; i++) {
+    const [x0, y0] = [cx(keep[i - 1][0]), cy(keep[i - 1][1])];
+    const [x1, y1] = [cx(keep[i][0]), cy(keep[i][1])];
+    const [x2, y2] = [cx(keep[i + 1][0]), cy(keep[i + 1][1])];
+    const l1 = Math.hypot(x1 - x0, y1 - y0);
+    const l2 = Math.hypot(x2 - x1, y2 - y1);
+    const r1 = Math.min(RAD, l1 / 2);
+    const r2 = Math.min(RAD, l2 / 2);
+    d += ` L${f(x1 - ((x1 - x0) / l1) * r1)},${f(y1 - ((y1 - y0) / l1) * r1)}`;
+    d += ` Q${x1},${y1} ${f(x1 + ((x2 - x1) / l2) * r2)},${f(y1 + ((y2 - y1) / l2) * r2)}`;
+  }
+  const last = keep[keep.length - 1];
+  d += ` L${cx(last[0])},${cy(last[1])}`;
+  const total = Math.max(steps * PITCH - corners * 0.39 * RAD, PITCH);
   const run = total / SPEED;
-  const distAt = (x, y) => y * (rowLen + arcLen) + (y % 2 === 0 ? x : cols - 1 - x) * PITCH;
+  const distOf = (k) => visited.get(k) * PITCH;
 
   const nSeg = Math.round(MAX_PX / SPACING) + 1;
   const lag = SPACING / SPEED;
@@ -96,7 +176,9 @@ function build(days, t) {
 
   let cells = "";
   const eatTimes = [];
-  const sorted = [...days].sort((a, b) => distAt(a.x, a.y) - distAt(b.x, b.y));
+  const sorted = [...days].sort(
+    (a, b) => (visited.get(key(a.x, a.y)) ?? 1e9) - (visited.get(key(b.x, b.y)) ?? 1e9),
+  );
   for (const c of sorted) {
     const x = PAD + c.x * PITCH;
     const y = PAD + c.y * PITCH;
@@ -104,7 +186,11 @@ function build(days, t) {
       cells += `<rect x="${x}" y="${y}" width="${CELL}" height="${CELL}" rx="3" fill="${t.levels[0]}"/>`;
       continue;
     }
-    const at = distAt(c.x, c.y) / SPEED;
+    if (!visited.has(key(c.x, c.y))) {
+      cells += `<rect x="${x}" y="${y}" width="${CELL}" height="${CELL}" rx="3" fill="${t.levels[c.level]}"/>`;
+      continue;
+    }
+    const at = distOf(key(c.x, c.y)) / SPEED;
     eatTimes.push(at);
     const kt = Math.min(at / T, 0.999);
     cells +=
